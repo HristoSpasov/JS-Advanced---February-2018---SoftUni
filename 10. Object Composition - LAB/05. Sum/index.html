@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sum</title>
+    <script src="process.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <input type="text" id="num1"/>
+    <input type="text" id="num2"/>
+    <input type="text" id="result" readonly/>
+    <br>
+    <button id="sumButton">Sum</button>
+    <button id="subtractButton">Subtract</button>
+</body>
+<script>
+    $(function () {
+       let proc = processor();
+       proc.init('#num1', '#num2', '#result');
+       $('#sumButton').on('click', proc.add);
+       $('#subtractButton').on('click', proc.subtract);
+    });
+</script>
+</html>

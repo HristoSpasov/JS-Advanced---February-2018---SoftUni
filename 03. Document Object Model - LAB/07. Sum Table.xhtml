@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Sum Table</title>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+            <tr><th>Product</th><th>Cost</th></tr>
+            <tr><td>Beer</td>   <td>2.88</td></tr>
+            <tr><td>Fries</td>  <td>2.15</td></tr>
+            <tr><td>Burger</td> <td>4.59</td></tr>
+            <tr><td>Total:</td> <td id="sum"></td></tr>
+        </tbody>
+    </table>
+    <button onclick="sum()">Sum</button>
+
+    <script type="">
+        function sum() {
+            let tds = document.querySelectorAll('table tr td');
+
+            let totalSum = 0;
+
+            for (let price of Array.from(tds).filter((e, i) => i % 2 !== 0)) {
+                totalSum += Number(price.textContent);
+            }
+
+            document.getElementById("sum").textContent = totalSum;
+        }
+    </script>
+</body>
+</html>
